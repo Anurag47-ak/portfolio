@@ -1,0 +1,61 @@
+/* Global light mode reset */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #222;
+  font-family: Arial, sans-serif;
+}
+
+/* Center main container */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* Profile section */
+.profile {
+  margin-bottom: 20px;
+}
+
+/* Search bar */
+.search-bar {
+  margin: 15px 0;
+}
+
+.search-bar input {
+  padding: 6px;
+  width: 220px;
+  font-size: 14px;
+}
+
+.search-bar button {
+  padding: 6px 12px;
+  margin-left: 8px;
+  cursor: pointer;
+}
+
+/* Project entries */
+.project {
+  margin-bottom: 20px;
+}
+
+.project p {
+  margin: 5px 0;
+}
+
+hr {
+  margin: 20px 0;
+}
+
+.skills {
+  margin: 10px 0 20px 0;
+}
+
+.skills button {
+  margin: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  font-size: 13px;
+}

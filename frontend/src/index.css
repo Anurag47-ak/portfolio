@@ -1,0 +1,4 @@
+/* Remove default Vite dark layout */
+:root {
+  background-color: #ffffff;
+}
