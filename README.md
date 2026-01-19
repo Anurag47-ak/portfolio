@@ -1,12 +1,149 @@
-# Candidate Profile Playground
+# Portfolio Dashboard
 
-A full-stack playground application that stores a candidate profile in a database, exposes it via REST APIs, and provides a minimal frontend to view the profile and search projects by skill.
+A professional portfolio website built with React and Node.js, showcasing projects, skills, and achievements with a modern, responsive design.
 
-Built as part of a backend-focused internship assessment.
+## 🚀 Features
+
+- **Professional Design**: Modern gradient UI with responsive layout
+- **Interactive Search**: Search projects by technology/skills
+- **Real-time Data**: Dynamic content management via REST API
+- **Skill Showcase**: Visual skill tags and project categorization
+- **Modern Tech Stack**: React, Node.js, Express, Prisma, SQLite
+
+## 🛠️ Technologies Used
+
+### Frontend
+- React 19.2.0
+- Vite (build tool)
+- Axios (API calls)
+- Modern CSS with gradients and animations
+
+### Backend
+- Node.js with Express 5.2.1
+- Prisma ORM 6.19.2
+- SQLite database
+- CORS enabled
+- Rate limiting
+
+## 🎯 Project Structure
+
+```
+Profile-Playground/
+├── backend/           # Express API server
+│   ├── index.js      # Main server file
+│   ├── prisma/       # Database schema and seed
+│   └── package.json
+├── frontend/          # React application
+│   ├── src/
+│   │   ├── App.jsx   # Main component
+│   │   └── App.css   # Styling
+│   └── package.json
+└── README.md
+```
+
+## 🚦 Getting Started
+
+### Prerequisites
+- Node.js (v16 or higher)
+- npm
+
+### Installation
+
+1. Clone the repository
+```bash
+git clone https://github.com/Anurag47-ak/portfolio.git
+cd portfolio
+```
+
+2. Install backend dependencies
+```bash
+cd backend
+npm install
+```
+
+3. Install frontend dependencies
+```bash
+cd ../frontend
+npm install
+```
+
+4. Set up the database
+```bash
+cd ../backend
+npx prisma generate
+npx prisma db push
+node prisma/seed.js
+```
+
+5. Start the development servers
+
+Backend (Terminal 1):
+```bash
+cd backend
+node index.js
+```
+
+Frontend (Terminal 2):
+```bash
+cd frontend
+npm run dev
+```
+
+6. Open your browser and navigate to `http://localhost:5173`
+
+## 📊 Featured Projects
+
+- **Arithmetic Logic Unit (ALU) Design** - Digital circuit design with Verilog
+- **RAM Design** - Memory architecture implementation
+- **Digital Filter Design** - DSP filters with MATLAB  
+- **Pipeline Processor Design** - Advanced computer architecture
+- **Personal Portfolio** - This website itself!
+
+## 🎨 Design Features
+
+- Gradient backgrounds and modern color scheme
+- Interactive hover effects and animations
+- Professional profile cards
+- Responsive grid layouts
+- Search functionality with skill filters
+- Loading states and error handling
+
+## 🔧 API Endpoints
+
+- `GET /profile` - Get profile information
+- `GET /projects` - Get all projects
+- `GET /search?q=skill` - Search projects by skill
+- `GET /health` - Health check
+
+## 📱 Responsive Design
+
+The portfolio is fully responsive and optimized for:
+- Desktop computers
+- Tablets
+- Mobile phones
+- All modern browsers
+
+## 👨‍💻 About
+
+This portfolio showcases the work of **Anurag Kumar**, a B.Tech student in Electronics & Communication Engineering at NIT Delhi, specializing in digital design, computer architecture, and web development.
+
+## 📧 Contact
+
+- **Email**: 231220014@nitdelhi.ac.in
+- **GitHub**: [Anurag47-ak](https://github.com/Anurag47-ak)
+- **LinkedIn**: [Anurag Kumar](https://www.linkedin.com/in/anurag-kumar-307204260/)
+
+## 🤝 Contributing
+
+Feel free to fork this project and submit pull requests for any improvements!
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
 
 ---
 
-## 🌐 Live URLs
+⭐ Don't forget to give this repo a star if you found it helpful!
 
 | Service | URL |
 | :--- | :--- |

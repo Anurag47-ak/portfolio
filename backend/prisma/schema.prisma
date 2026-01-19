@@ -3,7 +3,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
@@ -35,7 +35,7 @@ model Project {
   title       String
   description String
   link        String?
-  skillsUsed  String[]   
+  skillsUsed  String   
 
   profile     Profile @relation(fields: [profileId], references: [id])
   profileId   Int
