@@ -5,7 +5,7 @@ import "./App.css";
 // Auto-detect API URL based on environment
 const API = window.location.hostname === 'localhost' 
   ? "http://localhost:5000" 
-  : "https://portfolio-backend-YOUR_SERVICE_NAME.onrender.com";
+  : "https://portfolio-1-9vlx.onrender.com";
 
 function App() {
   const [profile, setProfile] = useState(null);

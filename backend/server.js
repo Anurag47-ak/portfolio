@@ -110,6 +110,19 @@ function requireAuth(req, res, next) {
 // =====================
 // Health Check
 // =====================
+app.get("/", (req, res) => {
+  res.json({ 
+    message: "Portfolio API is running! ✅", 
+    endpoints: [
+      "GET /profile - Get profile data",
+      "GET /projects - Get all projects", 
+      "GET /skills - Get all skills",
+      "GET /work - Get work experience",
+      "GET /search?q=term - Search projects"
+    ]
+  });
+});
+
 app.get("/health", (req, res) => {
   res.status(200).send("OK");
 });
