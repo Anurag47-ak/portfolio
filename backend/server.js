@@ -155,7 +155,20 @@ const staticData = {
 
 const app = express();
 
-app.use(cors());
+// CORS configuration for production
+const corsOptions = {
+  origin: [
+    'http://localhost:5173',
+    'http://localhost:5174', 
+    'https://portfolio-5-p431.onrender.com',
+    /\.onrender\.com$/
+  ],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
 
 // Request Logging Middleware
@@ -212,20 +225,23 @@ app.get("/health", (req, res) => {
 // GET /profile - Get profile data
 app.get("/profile", (req, res) => {
   try {
+    console.log("Profile requested");
     res.json(staticData.profile);
   } catch (error) {
     console.error("Error fetching profile:", error);
-    res.status(500).json({ error: "Failed to fetch profile" });
+    res.status(500).json({ error: "Failed to fetch profile", details: error.message });
   }
 });
 
 // GET /projects - Get all projects
 app.get("/projects", (req, res) => {
   try {
+    console.log("Projects requested");
+    console.log("Returning projects:", staticData.projects.length);
     res.json(staticData.projects);
   } catch (error) {
     console.error("Error fetching projects:", error);
-    res.status(500).json({ error: "Failed to fetch projects" });
+    res.status(500).json({ error: "Failed to fetch projects", details: error.message });
   }
 });
 

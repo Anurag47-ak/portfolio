@@ -18,10 +18,15 @@ function App() {
   useEffect(() => {
     async function loadData() {
       try {
+        console.log("Loading data from API:", API);
         const [profileRes, projectsRes] = await Promise.all([
           axios.get(API + "/profile"),
           axios.get(API + "/projects")
         ]);
+        
+        console.log("Profile response:", profileRes.data);
+        console.log("Projects response:", projectsRes.data);
+        
         setProfile(profileRes.data);
         setProjects(projectsRes.data);
         setAllProjects(projectsRes.data);
@@ -37,6 +42,7 @@ function App() {
         setLoading(false);
       } catch (error) {
         console.error("Error loading data:", error);
+        console.error("Error details:", error.response?.data || error.message);
         setLoading(false);
       }
     }
