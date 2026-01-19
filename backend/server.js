@@ -115,111 +115,72 @@ app.get("/health", (req, res) => {
 });
 
 // =====================
-// PROFILE CRUD
+// PROFILE API ENDPOINTS
 // =====================
 
-// READ profile
-app.get("/profile", async (req, res) => {
-  const profile = await prisma.profile.findFirst({
-    include: {
-      skills: true,
-      projects: true,
-      work: true,
-    },
-  });
-  res.json(profile);
+// GET /profile - Get profile data
+app.get("/profile", (req, res) => {
+  try {
+    res.json(staticData.profile);
+  } catch (error) {
+    console.error("Error fetching profile:", error);
+    res.status(500).json({ error: "Failed to fetch profile" });
+  }
 });
 
-// CREATE profile
-app.post("/profile", requireAuth, async (req, res) => {
-  const data = req.body;
-  const profile = await prisma.profile.create({ data });
-  res.json(profile);
+// GET /projects - Get all projects
+app.get("/projects", (req, res) => {
+  try {
+    res.json(staticData.projects);
+  } catch (error) {
+    console.error("Error fetching projects:", error);
+    res.status(500).json({ error: "Failed to fetch projects" });
+  }
 });
 
-// UPDATE profile
-app.put("/profile/:id", requireAuth, async (req, res) => {
-  const id = parseInt(req.params.id);
-  const data = req.body;
-
-  const updated = await prisma.profile.update({
-    where: { id },
-    data,
-  });
-
-  res.json(updated);
+// GET /skills - Get all skills
+app.get("/skills", (req, res) => {
+  try {
+    res.json(staticData.skills);
+  } catch (error) {
+    console.error("Error fetching skills:", error);
+    res.status(500).json({ error: "Failed to fetch skills" });
+  }
 });
 
-// =====================
-// QUERY ENDPOINTS
-// =====================
+// GET /work - Get work experience
+app.get("/work", (req, res) => {
+  try {
+    res.json(staticData.work);
+  } catch (error) {
+    console.error("Error fetching work experience:", error);
+    res.status(500).json({ error: "Failed to fetch work experience" });
+  }
+});
 
-// Get all projects OR filter by skill
-app.get("/projects", async (req, res) => {
-  const skill = req.query.skill ? req.query.skill.trim() : null;
-
-  // Pagination parameters
-  const page = parseInt(req.query.page) || 1;
-  const limit = parseInt(req.query.limit) || 10;
-  const skip = (page - 1) * limit;
-
-  // Fetch all projects first
-  const projects = await prisma.project.findMany();
-
-  // If skill filter exists → filter manually
-  let filteredProjects = projects;
-
-  if (skill) {
-    filteredProjects = projects.filter((p) =>
-      p.skillsUsed.some((s) => s.toLowerCase() === skill.toLowerCase()),
+// GET /search - Search projects by skill
+app.get("/search", (req, res) => {
+  try {
+    const query = req.query.q;
+    if (!query) {
+      return res.json(staticData.projects);
+    }
+    
+    const filteredProjects = staticData.projects.filter(project => 
+      project.skillsUsed.toLowerCase().includes(query.toLowerCase()) ||
+      project.title.toLowerCase().includes(query.toLowerCase()) ||
+      project.description.toLowerCase().includes(query.toLowerCase())
     );
+    
+    res.json(filteredProjects);
+  } catch (error) {
+    console.error("Error searching projects:", error);
+    res.status(500).json({ error: "Failed to search projects" });
   }
-
-  // Apply pagination AFTER filtering
-  const paginated = filteredProjects.slice(skip, skip + limit);
-
-  res.json(paginated);
 });
 
-
-// Get top skills
-app.get("/skills/top", async (req, res) => {
-  const skills = await prisma.skill.groupBy({
-    by: ["name"],
-    _count: { name: true },
-    orderBy: { _count: { name: "desc" } },
-  });
-
-  res.json(skills);
-});
-
-// Search projects by keyword or skill (case-insensitive)
-app.get("/search", async (req, res) => {
-  const q = req.query.q ? req.query.q.trim() : ""
-
-  if (!q) {
-    const allProjects = await prisma.project.findMany()
-    return res.json(allProjects)
-  }
-
-  const projects = await prisma.project.findMany()
-
-  const filtered = projects.filter(p => {
-    const textMatch =
-      p.title.toLowerCase().includes(q.toLowerCase()) ||
-      p.description.toLowerCase().includes(q.toLowerCase())
-
-    const skillMatch =
-      p.skillsUsed?.some(s =>
-        s.toLowerCase().includes(q.toLowerCase())
-      )
-
-    return textMatch || skillMatch
-  })
-
-  res.json(filtered)
-});
-
+// =====================
+// START SERVER
 // =====================
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
