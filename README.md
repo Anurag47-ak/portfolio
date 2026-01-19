@@ -1,125 +1,179 @@
-# Portfolio Dashboard
+# Anurag Kumar - Portfolio
 
-A professional portfolio website built with React and Node.js, showcasing projects, skills, and achievements with a modern, responsive design.
+A modern, responsive portfolio website showcasing academic projects and technical skills in Electronics & Communication Engineering.
 
-## 🚀 Features
+## 🌟 Features
 
-- **Professional Design**: Modern gradient UI with responsive layout
-- **Interactive Search**: Search projects by technology/skills
-- **Real-time Data**: Dynamic content management via REST API
-- **Skill Showcase**: Visual skill tags and project categorization
-- **Modern Tech Stack**: React, Node.js, Express, Prisma, SQLite
+- **Modern Design**: Clean, professional interface with gradient backgrounds and smooth animations
+- **Responsive Layout**: Optimized for all device sizes (desktop, tablet, mobile)
+- **Interactive Search**: Search projects by technology, keywords, or skills
+- **Project Showcase**: 5 major projects with detailed descriptions and live links
+- **Professional Profile**: Complete academic and contact information
+
+## 🚀 Live Demo
+
+**Website**: [Open Portfolio](./index.html)
+
+## 👨‍🎓 About
+
+**Anurag Kumar**  
+B.Tech in Electronics & Communication Engineering  
+NIT Delhi (CGPA: 7.60)  
+📧 231220014@nitdelhi.ac.in
+
+## 📋 Projects Featured
+
+### 1. Arithmetic Logic Unit (ALU) Design
+- **Tech Stack**: Verilog, Digital Design, FPGA
+- **Description**: 32-bit ALU implementation with comprehensive operations
+- **GitHub**: [ALU-Design](https://github.com/Anurag47-ak/ALU-Design)
+
+### 2. Random Access Memory (RAM) Design
+- **Tech Stack**: Verilog, Memory Design, FPGA
+- **Description**: Custom RAM module with configurable parameters
+- **GitHub**: [RAM-Design](https://github.com/Anurag47-ak/RAM-Design)
+
+### 3. Digital Filter Design & Implementation
+- **Tech Stack**: MATLAB, Signal Processing, DSP
+- **Description**: Advanced FIR and IIR filter implementation
+- **GitHub**: [Digital-Filter-Design](https://github.com/Anurag47-ak/Digital-Filter-Design)
+
+### 4. Pipeline Processor Architecture
+- **Tech Stack**: Verilog, Computer Architecture, MIPS
+- **Description**: Five-stage pipelined MIPS processor
+- **GitHub**: [Pipeline-Processor](https://github.com/Anurag47-ak/Pipeline-Processor)
+
+### 5. Personal Portfolio Website
+- **Tech Stack**: HTML5, CSS3, JavaScript
+- **Description**: Modern, responsive portfolio website
+- **GitHub**: [portfolio](https://github.com/Anurag47-ak/portfolio)
 
 ## 🛠️ Technologies Used
 
 ### Frontend
-- React 19.2.0
-- Vite (build tool)
-- Axios (API calls)
-- Modern CSS with gradients and animations
+- **HTML5**: Semantic structure and accessibility
+- **CSS3**: Modern styling with flexbox/grid, animations, gradients
+- **JavaScript**: Interactive search, dynamic content, smooth scrolling
 
-### Backend
-- Node.js with Express 5.2.1
-- Prisma ORM 6.19.2
-- SQLite database
-- CORS enabled
-- Rate limiting
+### Features
+- **Responsive Design**: Mobile-first approach with breakpoints
+- **Search Functionality**: Real-time project filtering
+- **Animations**: CSS transitions and keyframe animations
+- **Performance**: Optimized loading and minimal dependencies
 
-## 🎯 Project Structure
+## 📂 Project Structure
 
 ```
-Profile-Playground/
-├── backend/           # Express API server
-│   ├── index.js      # Main server file
-│   ├── prisma/       # Database schema and seed
-│   └── package.json
-├── frontend/          # React application
-│   ├── src/
-│   │   ├── App.jsx   # Main component
-│   │   └── App.css   # Styling
-│   └── package.json
-└── README.md
+Portfolio-Playground/
+├── index.html          # Main HTML file
+├── style.css           # Stylesheet with responsive design
+├── script.js           # JavaScript functionality
+└── README.md           # Project documentation
 ```
 
 ## 🚦 Getting Started
 
-### Prerequisites
-- Node.js (v16 or higher)
-- npm
+### Quick Start
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/Anurag47-ak/portfolio.git
+   cd portfolio
+   ```
 
-### Installation
+2. **Open in browser**:
+   ```bash
+   # Simply open index.html in your browser
+   open index.html
+   ```
 
-1. Clone the repository
-```bash
-git clone https://github.com/Anurag47-ak/portfolio.git
-cd portfolio
-```
+3. **Or serve locally**:
+   ```bash
+   # Using Python
+   python -m http.server 8000
+   
+   # Using Node.js
+   npx http-server .
+   
+   # Using PHP
+   php -S localhost:8000
+   ```
 
-2. Install backend dependencies
-```bash
-cd backend
-npm install
-```
+## 🌐 Deployment
 
-3. Install frontend dependencies
-```bash
-cd ../frontend
-npm install
-```
+### Static Hosting Options:
 
-4. Set up the database
-```bash
-cd ../backend
-npx prisma generate
-npx prisma db push
-node prisma/seed.js
-```
+1. **Render**:
+   - Connect GitHub repository
+   - Select "Static Site"
+   - Build command: (leave empty)
+   - Publish directory: `.`
 
-5. Start the development servers
+2. **Netlify**:
+   - Drag and drop folder or connect Git
+   - Automatic deployment on push
 
-Backend (Terminal 1):
-```bash
-cd backend
-node index.js
-```
+3. **Vercel**:
+   - Import GitHub repository
+   - Zero configuration needed
 
-Frontend (Terminal 2):
-```bash
-cd frontend
-npm run dev
-```
+4. **GitHub Pages**:
+   - Enable in repository settings
+   - Use `index.html` as entry point
 
-6. Open your browser and navigate to `http://localhost:5173`
+## 🔍 Search Features
 
-## 📊 Featured Projects
+- **Real-time Search**: Instant filtering as you type
+- **Multi-field Search**: Searches titles, descriptions, technologies
+- **Skill Tags**: Click popular skills for quick filtering
+- **Clear Function**: Easy search reset
+- **Keyboard Shortcuts**: 
+  - `Ctrl/Cmd + K`: Focus search
+  - `Escape`: Clear search
 
-- **Arithmetic Logic Unit (ALU) Design** - Digital circuit design with Verilog
-- **RAM Design** - Memory architecture implementation
-- **Digital Filter Design** - DSP filters with MATLAB  
-- **Pipeline Processor Design** - Advanced computer architecture
-- **Personal Portfolio** - This website itself!
+## 🎯 Key Features
+
+### Interactive Elements:
+- **Search Bar**: Live project filtering
+- **Skill Tags**: Quick technology-based filtering
+- **Responsive Grid**: Adaptive project layout
+- **Smooth Scrolling**: Enhanced navigation experience
+- **Hover Effects**: Interactive feedback
+
+### Performance:
+- **Fast Loading**: Minimal dependencies
+- **Optimized Images**: Efficient asset loading
+- **Clean Code**: Well-structured, maintainable codebase
+- **Browser Compatibility**: Support for modern browsers
 
 ## 🎨 Design Features
 
-- Gradient backgrounds and modern color scheme
-- Interactive hover effects and animations
-- Professional profile cards
-- Responsive grid layouts
-- Search functionality with skill filters
-- Loading states and error handling
-
-## 🔧 API Endpoints
-
-- `GET /profile` - Get profile information
-- `GET /projects` - Get all projects
-- `GET /search?q=skill` - Search projects by skill
-- `GET /health` - Health check
+- **Modern UI**: Clean, professional aesthetic
+- **Gradient Backgrounds**: Eye-catching color schemes
+- **Interactive Elements**: Hover effects, smooth transitions
+- **Typography**: Professional fonts with proper hierarchy
+- **Accessibility**: ARIA labels, keyboard navigation, semantic HTML
 
 ## 📱 Responsive Design
 
 The portfolio is fully responsive and optimized for:
-- Desktop computers
-- Tablets
+- **Desktop**: 1200px+ (full features, multi-column layout)
+- **Tablet**: 768px-1199px (adapted layout, touch-friendly)
+- **Mobile**: 320px-767px (single-column, optimized navigation)
+
+## 🔗 Links
+
+- **GitHub**: [https://github.com/Anurag47-ak](https://github.com/Anurag47-ak)
+- **LinkedIn**: [https://www.linkedin.com/in/anurag-kumar-307204260/](https://www.linkedin.com/in/anurag-kumar-307204260/)
+
+## 📧 Contact
+
+**Email**: 231220014@nitdelhi.ac.in  
+**Institution**: National Institute of Technology Delhi  
+**Program**: B.Tech Electronics & Communication Engineering
+
+---
+
+**© 2026 Portfolio Dashboard. Built with HTML, CSS & JavaScript.**
 - Mobile phones
 - All modern browsers
 

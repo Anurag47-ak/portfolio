@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anurag Kumar - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">Portfolio Dashboard</h1>
+            <p class="subtitle">Professional Profile & Project Showcase</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Profile Section -->
+        <section class="profile-section">
+            <div class="profile-card">
+                <div class="profile-header">
+                    <div class="avatar">A</div>
+                    <div class="profile-info">
+                        <h2 class="profile-name">Anurag Kumar</h2>
+                        <p class="profile-email">231220014@nitdelhi.ac.in</p>
+                        <p class="profile-education">B.Tech in Electronics & Communication Engineering, NIT Delhi (CGPA: 7.60)</p>
+                    </div>
+                </div>
+                
+                <div class="profile-links">
+                    <a href="https://github.com/Anurag47-ak" target="_blank" class="profile-link github">
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/anurag-kumar-307204260/" target="_blank" class="profile-link linkedin">
+                        <span>LinkedIn</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <div class="search-header">
+                <h3>Explore Projects</h3>
+                <p>Search projects by technology or skill</p>
+            </div>
+            
+            <div class="search-container">
+                <div class="search-bar">
+                    <input
+                        type="text"
+                        placeholder="Search by technology (e.g., React, Python, Machine Learning)..."
+                        id="searchInput"
+                        class="search-input"
+                    />
+                    <button onclick="clearSearch()" id="clearBtn" class="clear-btn" style="display: none;">×</button>
+                </div>
+                <button onclick="handleSearch()" class="search-btn">Search</button>
+            </div>
+
+            <div class="popular-skills">
+                <span class="skills-label">Popular Skills:</span>
+                <button class="skill-tag" onclick="searchBySkill('Verilog')">Verilog</button>
+                <button class="skill-tag" onclick="searchBySkill('MATLAB')">MATLAB</button>
+                <button class="skill-tag" onclick="searchBySkill('Digital Design')">Digital Design</button>
+                <button class="skill-tag" onclick="searchBySkill('Computer Architecture')">Computer Architecture</button>
+                <button class="skill-tag" onclick="searchBySkill('Signal Processing')">Signal Processing</button>
+                <button class="skill-tag" onclick="searchBySkill('JavaScript')">JavaScript</button>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section class="projects-section">
+            <div class="section-header">
+                <h3>Projects (<span id="projectCount">5</span>)</h3>
+                <p id="searchResults" class="search-results" style="display: none;"></p>
+            </div>
+
+            <div id="noResults" class="no-results" style="display: none;">
+                <h4>No projects found</h4>
+                <p>Try searching with different keywords or clear the search to see all projects.</p>
+                <button onclick="showAllProjects()" class="clear-search-btn">Show All Projects</button>
+            </div>
+
+            <div class="projects-grid" id="projectsGrid">
+                <!-- Projects will be loaded by JavaScript -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Portfolio Dashboard. Built with HTML, CSS & JavaScript.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
