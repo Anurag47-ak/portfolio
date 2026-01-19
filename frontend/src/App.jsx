@@ -2,7 +2,10 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import "./App.css";
 
-const API = "http://localhost:5000";
+// Auto-detect API URL based on environment
+const API = window.location.hostname === 'localhost' 
+  ? "http://localhost:5000" 
+  : "https://portfolio-backend-YOUR_SERVICE_NAME.onrender.com";
 
 function App() {
   const [profile, setProfile] = useState(null);
